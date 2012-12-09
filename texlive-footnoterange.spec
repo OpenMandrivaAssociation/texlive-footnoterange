@@ -57,3 +57,11 @@ footnoterange* environment are never hyperlinked.).
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Thu Feb 23 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.0a-1
++ Revision: 779741
+- Import texlive-footnoterange
+- Import texlive-footnoterange
+
