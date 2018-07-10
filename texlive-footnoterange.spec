@@ -6,7 +6,7 @@
 # catalog-version 1.0a
 Name:		texlive-footnoterange
 Version:	1.0a
-Release:	9
+Release:	10
 Summary:	References to ranges of footnotes
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/footnoterange
