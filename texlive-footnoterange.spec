@@ -1,6 +1,6 @@
 Name:		texlive-footnoterange
-Version:	52910
-Release:	2
+Version:	66149
+Release:	1
 Summary:	References to ranges of footnotes
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/footnoterange
