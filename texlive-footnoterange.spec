@@ -3,7 +3,7 @@ Version:	66149
 Release:	1
 Summary:	References to ranges of footnotes
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/footnoterange
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/footnoterange
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/footnoterange.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/footnoterange.doc.r%{version}.tar.xz
