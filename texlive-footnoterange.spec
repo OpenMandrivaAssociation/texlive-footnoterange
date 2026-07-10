@@ -1,49 +1,29 @@
-Name:		texlive-footnoterange
-Version:	66149
-Release:	1
+%global tl_name footnoterange
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.1c
+Release:	%{tl_revision}.1
 Summary:	References to ranges of footnotes
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/footnoterange
-License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/footnoterange.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/footnoterange.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/footnoterange.source.r%{version}.tar.xz
+License:	lppl1.3c
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/footnoterange.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/footnoterange.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/footnoterange.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package provides environments footnoterange and
-footnoterange*. Multiple footnotes inside these environments
-are not referenced as (e.g.) "1 2 3 4" but as "1-4", i.e., the
-range (from first to last referred footnote at that place) is
-given. If hyperref package and use of its hyperfootnotes-option
-the references are hyperlinked. (References to footnotes in the
-footnoterange* environment are never hyperlinked.).
+The package provides the environments footnoterange and footnoterange*.
+Multiple footnotes inside these environments are not referenced as
+(e.g.) "1 2 3" but as "1-3", i.e., the range (from first to last
+referred footnote at that place) is given. If the hyperref package is
+loaded with enabled hyperfootnotes-option, then the references are
+hyperlinked. (References to footnotes in footnoterange* environments are
+never hyperlinked.)
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/footnoterange
-%doc %{_texmfdistdir}/doc/latex/footnoterange
-#- source
-%doc %{_texmfdistdir}/source/latex/footnoterange
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
